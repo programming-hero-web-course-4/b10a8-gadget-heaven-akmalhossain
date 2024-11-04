@@ -1,8 +1,9 @@
 [
     {
+      "id": 1,
       "product_id": "LAP001",
       "product_title": "Dell XPS 13",
-      "product_image": "https://i.ibb.co.com/Zcy39z0/dell-Laptop.png",
+      "product_image": "https://i.ibb.co.com/TBtLnvY/Dell.png",
       "category": "Laptops",
       "price": 1200,
       "description": "High-performance laptop with Intel i7 processor, 16GB RAM, and 512GB SSD.",
@@ -10,10 +11,10 @@
       "availability": true,
       "rating": 4.5
     },
-    {
+    {"id": 2,
       "product_id": "LAP002",
       "product_title": "MacBook Air M1",
-      "product_image": "https://i.ibb.co.com/qxh6qnY/macbook.png",
+      "product_image": "https://i.ibb.co.com/fHqvQJb/mac.png",
       "category": "Laptops",
       "price": 999,
       "description": "Apple MacBook Air with M1 chip, 8GB RAM, and 256GB SSD.",
@@ -21,10 +22,10 @@
       "availability": true,
       "rating": 4.8
     },
-    {
+    {"id": 3,
       "product_id": "PHN001",
       "product_title": "iPhone 14 Pro",
-      "product_image": "https://i.ibb.co.com/CQYPMBG/iphone.png",
+      "product_image": "https://i.ibb.co.com/nRh6ymg/iphone.png",
       "category": "Phones",
       "price": 1099,
       "description": "Apple iPhone 14 Pro with A16 Bionic chip and 128GB storage.",
@@ -32,10 +33,10 @@
       "availability": true,
       "rating": 4.7
     },
-    {
+    {"id": 4,
       "product_id": "PHN002",
       "product_title": "Samsung Galaxy S23",
-      "product_image": "https://i.ibb.co.com/W03jbVT/sumsungphone.png",
+      "product_image": "https://i.ibb.co.com/jWZGZkm/sumsung.png",
       "category": "Phones",
       "price": 899,
       "description": "Samsung Galaxy S23 with Snapdragon 8 Gen 2 and 128GB storage.",
@@ -43,10 +44,10 @@
       "availability": true,
       "rating": 4.6
     },
-    {
+    {"id": 5,
       "product_id": "ACC001",
       "product_title": "Apple AirPods Pro",
-      "product_image": "https://i.ibb.co.com/Bq1YLLq/ipod.png",
+      "product_image": "https://i.ibb.co.com/1RRPHqx/aripod.png",
       "category": "Accessories",
       "price": 249,
       "description": "Apple AirPods Pro with active noise cancellation.",
@@ -54,10 +55,10 @@
       "availability": true,
       "rating": 4.7
     },
-    {
+    {"id": 6,
       "product_id": "ACC002",
       "product_title": "Samsung Galaxy Buds",
-      "product_image": "https://i.ibb.co.com/3zGzPnj/airbird.png",
+      "product_image": "https://i.ibb.co.com/9rt2XTh/sumbird.png",
       "category": "Accessories",
       "price": 129,
       "description": "Samsung Galaxy Buds with adaptive sound and wireless charging.",
@@ -65,10 +66,10 @@
       "availability": false,
       "rating": 4.4
     },
-    {
+    {"id": 7,
       "product_id": "SWT001",
       "product_title": "Apple Watch Series 8",
-      "product_image": "https://i.ibb.co.com/3NFVkz3/applwatch.png",
+      "product_image": "https://i.ibb.co.com/xqCYd3P/iwatch.png",
       "category": "Smart Watches",
       "price": 399,
       "description": "Apple Watch Series 8 with health and fitness tracking.",
@@ -76,10 +77,10 @@
       "availability": true,
       "rating": 4.9
     },
-    {
+    {"id": 8,
       "product_id": "SWT002",
       "product_title": "Samsung Galaxy Watch 5",
-      "product_image": "https://i.ibb.co.com/gvcKYy6/sumsungwatch.png",
+      "product_image": "https://i.ibb.co.com/YynTrqh/swatch.png",
       "category": "Smart Watches",
       "price": 299,
       "description": "Samsung Galaxy Watch 5 with fitness and health tracking.",
@@ -87,10 +88,10 @@
       "availability": true,
       "rating": 4.5
     },
-    {
+    {"id": 9,
       "product_id": "MBK001",
       "product_title": "MacBook Pro 14 M1",
-      "product_image": "https://i.ibb.co.com/qxh6qnY/macbook.png",
+      "product_image": "https://i.ibb.co.com/fHqvQJb/mac.png",
       "category": "MacBooks",
       "price": 1999,
       "description": "MacBook Pro 14 with M1 chip, 16GB RAM, and 512GB SSD.",
@@ -98,10 +99,10 @@
       "availability": true,
       "rating": 4.9
     },
-    {
+    {"id": 10,
       "product_id": "MBK002",
       "product_title": "MacBook Pro 16 M1",
-      "product_image": "https://i.ibb.co.com/qxh6qnY/macbook.png",
+      "product_image": "https://i.ibb.co.com/fHqvQJb/mac.png",
       "category": "MacBooks",
       "price": 2499,
       "description": "MacBook Pro 16 with M1 chip, 16GB RAM, and 1TB SSD.",
@@ -109,10 +110,10 @@
       "availability": false,
       "rating": 4.8
     },
-    {
+    {"id": 11,
       "product_id": "IPH001",
       "product_title": "iPhone 13",
-      "product_image": "https://i.ibb.co.com/CQYPMBG/iphone.png",
+      "product_image": "https://i.ibb.co.com/nRh6ymg/iphone.png",
       "category": "iPhone",
       "price": 799,
       "description": "Apple iPhone 13 with A15 Bionic chip and 128GB storage.",
@@ -120,15 +121,90 @@
       "availability": true,
       "rating": 4.6
     },
-    {
+    {"id": 12,
       "product_id": "IPH002",
       "product_title": "iPhone SE 2023",
-      "product_image": "https://i.ibb.co.com/CQYPMBG/iphone.png",
+      "product_image": "https://i.ibb.co.com/nRh6ymg/iphone.png",
       "category": "iPhone",
       "price": 429,
       "description": "Apple iPhone SE with A15 Bionic chip and 64GB storage.",
       "Specification": ["A15 Bionic chip", "64GB storage", "4.7-inch Retina display"],
       "availability": true,
       "rating": 4.5
-    }
+    },
+      {
+        "id": 13,
+        "product_id": "LAP013",
+        "product_title": "MacBook Air M1",
+        "product_image": "https://i.ibb.co.com/fHqvQJb/mac.png",
+        "category": "Laptops",
+        "price": 999,
+        "description": "Apple MacBook Air with M1 chip, 8GB RAM, and 256GB SSD.",
+        "Specification": ["Apple M1 chip", "8GB RAM", "256GB SSD", "13.3-inch Retina display"],
+        "availability": true,
+        "rating": 4.8
+      },
+      {
+        "id": 14,
+        "product_id": "LAP014",
+        "product_title": "MacBook Pro M1",
+        "product_image": "https://i.ibb.co.com/fHqvQJb/mac.png",
+        "category": "Laptops",
+        "price": 1299,
+        "description": "Apple MacBook Pro with M1 chip, 8GB RAM, and 256GB SSD.",
+        "Specification": ["Apple M1 chip", "8GB RAM", "256GB SSD", "13-inch Retina display"],
+        "availability": true,
+        "rating": 4.9
+      },
+      {
+        "id": 15,
+        "product_id": "LAP015",
+        "product_title": "MacBook Air M2",
+        "product_image": "https://i.ibb.co.com/fHqvQJb/mac.png",
+        "category": "Laptops",
+        "price": 1199,
+        "description": "Apple MacBook Air with M2 chip, 8GB RAM, and 512GB SSD.",
+        "Specification": ["Apple M2 chip", "8GB RAM", "512GB SSD", "13.3-inch Retina display"],
+        "availability": true,
+        "rating": 4.7
+      },
+      {
+        "id": 16,
+        "product_id": "LAP016",
+        "product_title": "MacBook Pro M2",
+        "product_image": "https://i.ibb.co.com/fHqvQJb/mac.png",
+        "category": "Laptops",
+        "price": 1499,
+        "description": "Apple MacBook Pro with M2 chip, 16GB RAM, and 512GB SSD.",
+        "Specification": ["Apple M2 chip", "16GB RAM", "512GB SSD", "13.3-inch Retina display"],
+        "availability": true,
+        "rating": 4.9
+      },
+      {
+        "id": 17,
+        "product_id": "LAP017",
+        "product_title": "MacBook Pro 16-inch",
+        "product_image": "https://i.ibb.co.com/fHqvQJb/mac.png",
+        "category": "Laptops",
+        "price": 2399,
+        "description": "Apple MacBook Pro with M1 Max chip, 32GB RAM, and 1TB SSD.",
+        "Specification": ["Apple M1 Max chip", "32GB RAM", "1TB SSD", "16-inch Retina display"],
+        "availability": true,
+        "rating": 5.0
+      },
+      {
+        "id": 18,
+        "product_id": "LAP018",
+        "product_title": "MacBook Air 13-inch",
+        "product_image": "https://i.ibb.co.com/fHqvQJb/mac.png",
+        "category": "Laptops",
+        "price": 899,
+        "description": "Apple MacBook Air with Intel i5 processor, 8GB RAM, and 128GB SSD.",
+        "Specification": ["Intel i5 processor", "8GB RAM", "128GB SSD", "13.3-inch Retina display"],
+        "availability": false,
+        "rating": 4.5
+      }
+    
+    
   ]
+

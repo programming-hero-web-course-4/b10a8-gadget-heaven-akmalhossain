@@ -5,7 +5,19 @@ export default {
     "./src/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
-    extend: {},
+    extend: {
+      colors:{
+        primary:'#9538E2',
+        dark:'#09080F',
+        dark60:'rgba(9, 8, 15, 0.6)',
+        white30:'rgba(255, 255, 255, 0.3)'
+        
+      },
+      fontFamily: {
+        sora: 'Sora',
+        inter: 'Inter',
+    }
+    },
   },
   plugins: [
     require('daisyui'),
