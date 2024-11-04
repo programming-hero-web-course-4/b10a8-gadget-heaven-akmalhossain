@@ -10,6 +10,7 @@ export default {
         primary:'#9538E2',
         dark:'#09080F',
         dark60:'rgba(9, 8, 15, 0.6)',
+        dark80:'rgba(9, 8, 15, 0.8)',
         white30:'rgba(255, 255, 255, 0.3)'
         
       },
