@@ -1,7 +1,11 @@
 import React from 'react';
 import { useLoaderData, useParams } from 'react-router-dom';
+import cart from '../../src/assets/icons/cart2.svg';
+import love from '../../src/assets/icons/love.svg';
+import { addStoredCartList } from '../utility/addToDB';
 
 const Details = () => {
+
     const { id } = useParams();
     const clickedId = parseInt(id);
 
@@ -11,7 +15,12 @@ const Details = () => {
 
     const { product_id, product_title, product_image, category, price, description, Specification, availability, rating } = product;
 
-    console.log(data, product, clickedId)
+   
+    const handleAddToCart=()=>{
+        addStoredCartList(id)
+        console.log(id)
+    }
+
     return (
         <>
             <section>
@@ -28,15 +37,23 @@ const Details = () => {
                         <h1 className='font-semibold text-dark text-3xl'>{product_title}</h1>
                         <p className='font-semibold text-dark80 text-xl mt-3'>Price: $ {price}</p>
                         <p className='bg-green-50 border border-green-600 w-fit text-green-600 px-3 rounded-full mt-4'>
-                            {availability?'In Stock':'Not in Stock'}
+                            {availability ? 'In Stock' : 'Not in Stock'}
                         </p>
                         <p className='mt-4'>{description}</p>
-                        <ul className='list-inside mt-6'> 
+                        <ul className='list-inside mt-6'>
                             <h1 className='font-bold text-dark text-lg'>Specification</h1>
-                            {Specification.map(i => <li className='list-decimal'>{i}</li>)}
+                            {Specification.map((i, idx) => <li key={idx} className='list-decimal'>{i}</li>)}
                         </ul>
                         <h1 className='font-bold text-dark text-lg'>Rating <span><img src="" alt="" /></span></h1>
-                        <p>{rating}</p>
+                        <div className='mt-4'>
+                            <span>rating pore korbo</span>
+                            <span>{rating}</span>
+                        </div>
+
+                        <div className='mt-8 flex gap-4'>
+                            <button onClick={()=> handleAddToCart(id)} className='flex gap-2 bg-primary py-3 px-5 rounded-full text-white text-lg font-bold ga'>Add To Card <span><img src={cart} alt="" /></span></button>
+                            <button className='rounded-full border border-gray-400 py-4 px-4'><img className='w-6 h-6' src={love} alt="" /> </button>
+                        </div>
 
                     </div>
 

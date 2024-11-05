@@ -1,20 +1,27 @@
 import React from 'react';
 import cart from '../../assets/icons/cart.svg';
 import love from '../../assets/icons/love.svg';
-import { NavLink } from 'react-router-dom';
+import { Link, NavLink, useLocation, useParams } from 'react-router-dom';
 
 const Navbar = () => {
-
+    const location = useLocation();
+    const params = useParams()
+    // console.log(location, params);
     const links = <>
         
                     <li><NavLink to='/'>Home</NavLink></li>
-                    <li><NavLink to='/'>Statistics</NavLink></li>
+                    <li><NavLink to='/statistics'>Statistics</NavLink></li>
                     <li><NavLink to='/dashboard'>Dashboard</NavLink></li>
                 
     </>
 
     return (
-        <div className="navbar bg-primary w-11/12 mx-auto mt-16 py-7 rounded-t-2xl">
+        
+       <div className= 
+       {location.pathname==='/'? 
+         'navbar bg-primary w-11/12 mx-auto lg:px-8 py-7 rounded-t-2xl'
+      :'navbar bg-[##F6F6F6] w-11/12 mx-auto lg:px-8 py-7 rounded-t-2xl'
+       }>
             <div className="navbar-start">
                 <div className="dropdown">
                     <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
@@ -37,21 +44,20 @@ const Navbar = () => {
                        {links}
                     </ul>
                 </div>
-                <a className="btn btn-ghost text-white text-xl">Gadget Heaven</a>
+                <a className={location.pathname==='/'?"btn btn-ghost text-white text-xl":"btn btn-ghost text-dark text-xl"}>Gadget Heaven</a>
             </div>
             <div className="navbar-center hidden lg:flex">
-                <ul className="menu menu-horizontal text-white px-1">
-                    
+                <ul className={location.pathname==='/'?"menu menu-horizontal text-white px-1":"menu menu-horizontal text-dark px-1"}>
                 {links}
                 </ul>
             </div>
             <div className="navbar-end flex gap-4">
-                <div className='bg-white rounded-full p-4'>
+                <Link to={'/cart'} className={location.pathname==='/'?'bg-white rounded-full p-4':'bg-white border border-gray-300 rounded-full p-4'}>
                 <img  className='w-6' src={cart} alt="" />
-                </div>
-                <div className='bg-white rounded-full p-4'>
+                </Link>
+                <Link to={'/wishlist'} className={location.pathname==='/'?'bg-white rounded-full p-4':'bg-white border border-gray-300 rounded-full p-4'}>
                 <img className='w-6' src={love} alt="" />
-                </div>
+                </Link>
             </div>
         </div>
     );
