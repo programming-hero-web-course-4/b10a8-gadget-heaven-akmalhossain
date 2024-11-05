@@ -2,16 +2,16 @@ import React, { useEffect, useState } from 'react';
 import cart from '../../assets/icons/cart.svg';
 import love from '../../assets/icons/love.svg';
 import { Link, NavLink, useLocation, useParams } from 'react-router-dom';
-import { getStoredCartList } from '../../utility/addToDB'
+import { getCartData } from '../../utility/addToDB'
 
 const Navbar = () => {
 
     const location = useLocation();
-    const [cartList, setCartList] = useState([])
-    useEffect(() => {
-        const storedCartList = getStoredCartList();
-        setCartList(storedCartList);
-    }, [])
+    // const [cartList, setCartList] = useState([])
+    // useEffect(() => {
+    //     const storedCartList = getCartData();
+    //     setCartList(storedCartList);
+    // }, [])
 
     const links = <>
 
@@ -63,7 +63,9 @@ const Navbar = () => {
                     <img className='w-6' src={cart} alt="" />
 
 
-                    <div className='absolute right-0 bg-white rounded-full w-6 h-6 text-center shadow-lg border top-0'>{cartList.length}</div>
+                    <div className='absolute right-0 bg-white rounded-full w-6 h-6 text-center shadow-lg border top-0'>
+                        {/* {cartList.length} */}
+                        </div>
                 </Link>
 
                 <Link to={'/wishlist'} className={location.pathname === '/' ? 'bg-white rounded-full p-4' : 'bg-white border border-gray-300 rounded-full p-4'}>

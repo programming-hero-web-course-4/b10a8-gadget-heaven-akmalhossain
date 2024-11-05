@@ -2,11 +2,15 @@
 import { useLoaderData, useParams } from 'react-router-dom';
 import cart from '../../src/assets/icons/cart2.svg';
 import love from '../../src/assets/icons/love.svg';
+import { addStoredCartList, addWishList, getStoredWishListData } from '../utility/addToDB';
+import { useEffect, useState } from 'react';
 
 
 const Details = () => {
 
-    
+    const [inWiseList, setInWiseList] = useState(false)
+
+  
 
     const { id } = useParams();
     const clickedId = parseInt(id);
@@ -15,13 +19,25 @@ const Details = () => {
 
     const product = data.find(product => product.id === clickedId);
 
-    const { product_id, product_title, product_image, category, price, description, Specification, availability, rating } = product;
+    const {id:pid, product_id, product_title, product_image, category, price, description, Specification, availability, rating } = product;
+
+    useEffect(()=>{
+        const wishlistid = getStoredWishListData();
+        console.log(wishlistid)
+       const findId =  wishlistid.find(id => id === pid);
+       if(findId){setInWiseList(true)}
+       else{setInWiseList(false)}
+    },[])
 
    
-    // const handleAddToCart=()=>{
-    //     addStoredCartList(id)
-    //     console.log(id)
-    // }
+    const handleAddToCart=(product)=>{
+    addStoredCartList(product)
+  }
+
+  const handleAddWishList=(pid)=>{
+    addWishList(pid);
+    setInWiseList(true);
+  }
 
     return (
         <>
@@ -53,8 +69,17 @@ const Details = () => {
                         </div>
 
                         <div className='mt-8 flex gap-4'>
-                            <button onClick={()=> handleAddToCart(id)} className='flex gap-2 bg-primary py-3 px-5 rounded-full text-white text-lg font-bold ga'>Add To Card <span><img src={cart} alt="" /></span></button>
-                            <button className='rounded-full border border-gray-400 py-4 px-4'><img className='w-6 h-6' src={love} alt="" /> </button>
+                            <button 
+                            onClick={()=> handleAddToCart(product)} 
+                            className='flex gap-2 bg-primary py-3 px-5 rounded-full
+                             text-white text-lg font-bold ga'>Add To Card <span>
+                                <img src={cart} alt="" /></span>
+                                </button>
+                            <button onClick={()=> handleAddWishList(pid)} 
+                            disabled={inWiseList}
+                            className='rounded-full border border-gray-400 py-4 px-4'>
+                                <img className='w-6 h-6' src={love} alt="" /> 
+                                </button>
                         </div>
                        
 

@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 import { useLoaderData } from "react-router-dom";
-import {getStoredCartList} from '../utility/addToDB'
+import {getCartData} from '../utility/addToDB'
 
 const Cart = () => {
     

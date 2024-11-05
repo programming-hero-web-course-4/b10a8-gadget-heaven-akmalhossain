@@ -1,24 +1,48 @@
-const getStoredCartList = () => {
-    const storedListStr = localStorage.getItem('cart');
-    if (storedListStr) {
-        const storedList = JSON.parse(storedListStr)
-        return storedList;
+import toast from "react-hot-toast";
+
+// get 
+const getStoredWishListData = () => {
+    const storedListStr = localStorage.getItem('wise-list');
+    if (storedListStr){
+        const storedList = JSON.parse(storedListStr);
+        return storedList
     }
-    else {
+    else{
         return []
     }
 }
 
-const addStoredCartList = (id) => {
-    const storedList = getStoredCartList();
-    if (storedList.includes(id)) {
-        alert('alredy added')
-    }
-    else {
-        storedList.push(id);
-        const storedListStr = JSON.stringify(storedList);
-        localStorage.setItem('cart', storedListStr)
-    }
+const addWishList = (id) => {
+    
+   const storedList = getStoredWishListData();
+   
+   if(storedList.includes(id)){
+    toast.error('!!! Already in list')
+   }
+   else{
+    storedList.push(id);
+    const storedListStr = JSON.stringify(storedList);
+    localStorage.setItem('wise-list', storedListStr);
+    toast.success('Successfully added Wish List')
+   }
 }
 
-export { addStoredCartList, getStoredCartList }
+const getCartData=()=>{
+    const storedListStr = localStorage.getItem('cart-list');
+    if(storedListStr){
+        const storedList = JSON.parse(storedListStr);
+        return storedList
+    }
+    else{
+        return []
+    }
+}
+const addStoredCartList =(product)=>{
+    const storedList = getCartData();
+    storedList.push(product);
+    const storedListStr = JSON.stringify(storedList);
+    localStorage.setItem('cart-list', storedListStr);
+    toast.success('Successfully added to cart')
+}
+
+export { addStoredCartList, addWishList, getCartData, getStoredWishListData }
