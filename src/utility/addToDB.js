@@ -21,4 +21,4 @@ const addStoredCartList = (id) => {
     }
 }
 
-export { addStoredCartList }
+export { addStoredCartList, getStoredCartList }

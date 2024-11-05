@@ -1,10 +1,12 @@
-import React from 'react';
+
 import { useLoaderData, useParams } from 'react-router-dom';
 import cart from '../../src/assets/icons/cart2.svg';
 import love from '../../src/assets/icons/love.svg';
-import { addStoredCartList } from '../utility/addToDB';
+
 
 const Details = () => {
+
+    
 
     const { id } = useParams();
     const clickedId = parseInt(id);
@@ -16,10 +18,10 @@ const Details = () => {
     const { product_id, product_title, product_image, category, price, description, Specification, availability, rating } = product;
 
    
-    const handleAddToCart=()=>{
-        addStoredCartList(id)
-        console.log(id)
-    }
+    // const handleAddToCart=()=>{
+    //     addStoredCartList(id)
+    //     console.log(id)
+    // }
 
     return (
         <>
@@ -40,12 +42,12 @@ const Details = () => {
                             {availability ? 'In Stock' : 'Not in Stock'}
                         </p>
                         <p className='mt-4'>{description}</p>
-                        <ul className='list-inside mt-6'>
-                            <h1 className='font-bold text-dark text-lg'>Specification</h1>
+                            <h1 className='font-bold text-dark text-lg mt-4'>Specification</h1>
+                        <ul className='list-inside mt-2'>
                             {Specification.map((i, idx) => <li key={idx} className='list-decimal'>{i}</li>)}
                         </ul>
-                        <h1 className='font-bold text-dark text-lg'>Rating <span><img src="" alt="" /></span></h1>
-                        <div className='mt-4'>
+                        <h1 className='font-bold text-dark text-lg mt-4'>Rating <span><img src="" alt="" /></span></h1>
+                        <div className='mt-2'>
                             <span>rating pore korbo</span>
                             <span>{rating}</span>
                         </div>
@@ -54,6 +56,7 @@ const Details = () => {
                             <button onClick={()=> handleAddToCart(id)} className='flex gap-2 bg-primary py-3 px-5 rounded-full text-white text-lg font-bold ga'>Add To Card <span><img src={cart} alt="" /></span></button>
                             <button className='rounded-full border border-gray-400 py-4 px-4'><img className='w-6 h-6' src={love} alt="" /> </button>
                         </div>
+                       
 
                     </div>
 

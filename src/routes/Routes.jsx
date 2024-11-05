@@ -11,53 +11,54 @@ import Wishlist from '../components/Wishlist/Wishlist'
 import Statistics from '../pages/Statistics'
 
 const router = createBrowserRouter([
-    {
-      path:'/',
-      element:<Layouts></Layouts>,
-      errorElement:<ErrorPage></ErrorPage>,
-      children:[
-        {
-          path:'/',
-          element:<Home></Home>,
-          loader: () => fetch('../categories.json'),
-          children:[
-            {
-              path:'/',
-              element:<AllProducts></AllProducts>,
-              loader: () => fetch('../products.json'),
-            },
-            {
-              path:':category',
-              element:<AllProducts></AllProducts>,
-              loader: () => fetch('../products.json'),
-            },
-          ]
-        },
-        {
-          path:'dashboard',
-          element:<Dashboard></Dashboard>
-        },
-        {
-          path:'statistics',
-          element:<Statistics></Statistics>
-        },
-        {
-          path:'details/:id',
-          element:<Details></Details>,
-          loader:() => fetch('../products.json')
-        },
-        
-        {
-          path:'cart',
-          element:<Cart></Cart>
-        },
-        {
-          path:'wishlist',
-          element:<Wishlist></Wishlist>
-        },
-      ]
-    }
-  ])
+  {
+    path: '/',
+    element: <Layouts></Layouts>,
+    errorElement: <ErrorPage></ErrorPage>,
+    children: [
+      {
+        path: '/',
+        element: <Home></Home>,
+        loader: () => fetch('../categories.json'),
+        children: [
+          {
+            path: '/',
+            element: <AllProducts></AllProducts>,
+            loader: () => fetch('../products.json'),
+          },
+          {
+            path: ':category',
+            element: <AllProducts></AllProducts>,
+            loader: () => fetch('../products.json'),
+          },
+        ]
+      },
+      {
+        path: 'dashboard',
+        element: <Dashboard></Dashboard>
+      },
+      {
+        path: 'statistics',
+        element: <Statistics></Statistics>
+      },
+      {
+        path: 'details/:id',
+        element: <Details></Details>,
+        loader: () => fetch('../products.json')
+      },
 
-  export default router
+      {
+        path: 'cart',
+        element: <Cart></Cart>,
+        loader: () => fetch('../products.json'),
+      },
+      {
+        path: 'wishlist',
+        element: <Wishlist></Wishlist>
+      },
+    ]
+  }
+])
+
+export default router
 
