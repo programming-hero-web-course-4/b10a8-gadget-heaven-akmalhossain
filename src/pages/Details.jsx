@@ -23,15 +23,15 @@ const Details = () => {
 
     useEffect(()=>{
         const wishlistid = getStoredWishListData();
-        console.log(wishlistid)
+        
        const findId =  wishlistid.find(id => id === pid);
        if(findId){setInWiseList(true)}
        else{setInWiseList(false)}
     },[])
 
    
-    const handleAddToCart=(product)=>{
-    addStoredCartList(product)
+    const handleAddToCart=(pid)=>{
+    addStoredCartList(pid)
   }
 
   const handleAddWishList=(pid)=>{
@@ -70,7 +70,7 @@ const Details = () => {
 
                         <div className='mt-8 flex gap-4'>
                             <button 
-                            onClick={()=> handleAddToCart(product)} 
+                            onClick={()=> handleAddToCart(pid)} 
                             className='flex gap-2 bg-primary py-3 px-5 rounded-full
                              text-white text-lg font-bold ga'>Add To Card <span>
                                 <img src={cart} alt="" /></span>

@@ -58,7 +58,7 @@ const Navbar = () => {
                 </ul>
             </div>
             <div className="navbar-end flex  gap-4">
-                <Link to={'/cart'} className={location.pathname === '/' ? 'bg-white relative rounded-full p-4' : 'bg-white relative border border-gray-300 rounded-full p-4'}>
+                <Link to={'/dashboard/cart'} className={location.pathname === '/' ? 'bg-white relative rounded-full p-4' : 'bg-white relative border border-gray-300 rounded-full p-4'}>
 
                     <img className='w-6' src={cart} alt="" />
 
@@ -68,7 +68,7 @@ const Navbar = () => {
                         </div>
                 </Link>
 
-                <Link to={'/wishlist'} className={location.pathname === '/' ? 'bg-white rounded-full p-4' : 'bg-white border border-gray-300 rounded-full p-4'}>
+                <Link to={'/dashboard/wishlist'} className={location.pathname === '/' ? 'bg-white rounded-full p-4' : 'bg-white border border-gray-300 rounded-full p-4'}>
                     <img className='w-6' src={love} alt="" />
                 </Link>
             </div>

@@ -37,9 +37,9 @@ const getCartData=()=>{
         return []
     }
 }
-const addStoredCartList =(product)=>{
+const addStoredCartList =(id)=>{
     const storedList = getCartData();
-    storedList.push(product);
+    storedList.push(id);
     const storedListStr = JSON.stringify(storedList);
     localStorage.setItem('cart-list', storedListStr);
     toast.success('Successfully added to cart')
