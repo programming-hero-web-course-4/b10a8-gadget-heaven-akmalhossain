@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import { useLoaderData } from 'react-router-dom';
-import { getStoredWishListData } from '../../utility/addToDB';
+import { getStoredWishListData, removeFromWishList } from '../../utility/addToDB';
 import WishCard from '../WishCard/WishCard';
+import toast from 'react-hot-toast';
 
 const Wishlist = () => {
     const allProduct = useLoaderData()
@@ -16,13 +17,19 @@ const Wishlist = () => {
         setReadList(readWProduct)
     }, [])
 
+    const handleRemove= (id)=>{
+        const newWProduct  = readList.filter((p) =>p.id !== id )
+        setReadList(newWProduct);
+        removeFromWishList(id)
+    };
+
 
     return (
         <>
             <div className='w-8/12 mx-auto mt-10'>
                 <h1 className='text-2xl text-dark font-bold'>WishList {readList.length}</h1>
                 <div className='mt-10 space-y-8'>
-                    {readList.map(product => <WishCard key={product.id} product={product}></WishCard>)}
+                    {readList.map(product => <WishCard key={product.id} product={product} handleRemove={handleRemove}></WishCard>)}
                 </div>
             </div>
 

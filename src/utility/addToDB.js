@@ -27,6 +27,20 @@ const addWishList = (id) => {
    }
 }
 
+const removeFromWishList = (id) =>{
+    const storedList = JSON.parse(localStorage.getItem('wise-list'))||[];
+  
+    const index = storedList.findIndex(i=>i===id);
+
+    if (index !== -1) storedList.splice(index, 1);
+
+    localStorage.setItem('wise-list', JSON.stringify(storedList))
+
+    toast.success('Product removed!!')
+}
+
+
+
 const getCartData=()=>{
     const storedListStr = localStorage.getItem('cart-list');
     if(storedListStr){
@@ -44,5 +58,15 @@ const addStoredCartList =(id)=>{
     localStorage.setItem('cart-list', storedListStr);
     toast.success('Successfully added to cart')
 }
+const removeFromCartList=(id)=>{
+    const storedList = JSON.parse(localStorage.getItem('cart-list'))||[];
+  
+    const index = storedList.findIndex(i=>i===id);
 
-export { addStoredCartList, addWishList, getCartData, getStoredWishListData }
+    if (index !== -1) storedList.splice(index, 1);
+
+    localStorage.setItem('cart-list', JSON.stringify(storedList))
+
+    toast.success('Product removed!!')
+}
+export { addStoredCartList, addWishList, getCartData, getStoredWishListData, removeFromWishList,  removeFromCartList}

@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useLoaderData } from 'react-router-dom';
-import { getCartData } from '../../utility/addToDB';
+import { getCartData, removeFromCartList } from '../../utility/addToDB';
 import CartProduct from '../CartProduct/CartProduct';
 
 const Cart = () => {
@@ -8,7 +8,12 @@ const Cart = () => {
     const allProducts = useLoaderData();
 
     // console.log(allProducts);
-    const [readList, setReadList]=useState([])
+    const [readList, setReadList]=useState([]);
+
+    
+    const [totalPrice, setTotalPrice] =useState(0);
+
+
     useEffect(()=>{
         const storedCartList = getCartData();
         const storedCartListInt = storedCartList.map(id => parseInt(id))
@@ -19,7 +24,11 @@ const Cart = () => {
         setReadList(readProductList)
         
     },[])
-
+    const handleRemoveCart=(id)=>{
+        const newPCart = readList.filter((p)=>p.id!==id);
+        setReadList(newPCart);
+        removeFromCartList(id);
+    }
     return (
         <div className='w-8/12 mx-auto mt-10'>
             <div className='flex items-center justify-between'>
@@ -32,7 +41,7 @@ const Cart = () => {
             </div>
             <div className='space-y-8 mt-10'>
                 {
-                    readList.map(product =><CartProduct key={product.id} product={product}></CartProduct>)
+                    readList.map(product =><CartProduct key={product.id} product={product} handleRemoveCart={handleRemoveCart}></CartProduct>)
                 }
             </div>
         </div>

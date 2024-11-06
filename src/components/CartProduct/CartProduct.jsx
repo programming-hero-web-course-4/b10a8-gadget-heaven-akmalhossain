@@ -1,7 +1,7 @@
 import React from 'react';
 
-const CartProduct = ({ product }) => {
-    const { product_id, product_title, product_image, category, price, description, Specification, availability, rating } = product;
+const CartProduct = ({ product, handleRemoveCart }) => {
+    const {id, product_id, product_title, product_image, category, price, description, Specification, availability, rating } = product;
     return (
             <>
             <div className='flex  items-center  justify-between p-8 rounded-3xl bg-white'>
@@ -13,7 +13,7 @@ const CartProduct = ({ product }) => {
                     <p>Price: $ {price}</p>
                 </div>
                </div>
-                <button className='text-red-700'>Remove</button>
+                <button onClick={()=>{handleRemoveCart(id)}} className='text-red-700'>Remove</button>
             </div>
             </>
     );

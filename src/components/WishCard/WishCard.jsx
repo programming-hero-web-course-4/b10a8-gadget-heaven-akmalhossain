@@ -1,7 +1,10 @@
-import React from 'react';
+import React, { useState } from 'react';
 
-const WishCard = ({product}) => {
-    const { product_id, product_title, product_image, category, price, description, Specification, availability, rating } = product;
+const WishCard = ({product, handleRemove}) => {
+
+   
+
+    const {id, product_id, product_title, product_image, category, price, description, Specification, availability, rating } = product;
     return (
         <>
             <div className='flex  items-center  justify-between p-8 rounded-3xl bg-white'>
@@ -14,7 +17,7 @@ const WishCard = ({product}) => {
                     <button> Add to Cart</button>
                 </div>
                </div>
-                <button className='text-red-700'>Remove</button>
+                <button onClick={()=>{handleRemove(id)}}  className='text-red-700'>Remove</button>
             </div>
             </>
     );
