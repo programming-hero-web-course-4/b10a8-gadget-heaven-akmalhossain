@@ -2,8 +2,7 @@
 link
 ## https://sweet-kangaroo-dca2ac.netlify.app
 
-Repo 
-##### https://github.com/programming-hero-web-course-4/b10a8-gadget-heaven-akmalhossain
+
 
 ##### Requirement Doc Link
 
