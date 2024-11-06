@@ -5,8 +5,7 @@ import love from '../../src/assets/icons/love.svg';
 import { addStoredCartList, addWishList, getStoredWishListData } from '../utility/addToDB';
 import { useEffect, useState } from 'react';
 
-
-
+import star from '../assets/icons/icons8-star-48.png'
 
 const Details = () => {
 
@@ -70,8 +69,10 @@ const Details = () => {
                             {Specification.map((i, idx) => <li key={idx} className='list-decimal'>{i}</li>)}
                         </ul>
                         <h1 className='font-bold text-dark text-lg mt-4'>Rating <span><img src="" alt="" /></span></h1>
-                        <div className='mt-2'>
-                            <span>rating pore korbo</span>
+                        <div className='mt-2 flex gap-2 items-center'>
+                            <span>
+                                <img className='w-6' src={star} alt="" />
+                            </span>
                             <span>{rating}</span>
                         </div>
 

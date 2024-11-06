@@ -1,0 +1,35 @@
+[
+    {
+      "id": 1,
+      "title": "50% Off on Laptops",
+      "description": "Get 50% off on selected laptops, including top brands like Dell, HP, and Lenovo.",
+      "originalPrice": 1000,
+      "discountedPrice": 500,
+      "startDate": "2024-11-01",
+      "endDate": "2024-11-30",
+      "image": "https://i.ibb.co.com/nBWPDnW/lap.png"
+      
+    },
+    {
+      "id": 2,
+      "title": "Buy One Get One Free on Smartphones",
+      "description": "Limited-time offer on selected smartphones. Buy one and get another for free!",
+      "originalPrice": 800,
+      "discountedPrice": 800,
+      "startDate": "2024-11-05",
+      "endDate": "2024-11-20",
+      "image": "https://i.ibb.co.com/p0qdQC1/pho.png"
+      
+    },
+    {
+      "id": 3,
+      "title": "20% Off on Smartwatches",
+      "description": "Save 20% on all smartwatches in the store. A great deal for tech lovers!",
+      "originalPrice": 200,
+      "discountedPrice": 160,
+      "startDate": "2024-11-10",
+      "endDate": "2024-11-15",
+      "image": "https://i.ibb.co.com/1ngGH5F/wat.png"
+      
+    }
+  ]

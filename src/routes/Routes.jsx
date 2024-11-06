@@ -9,6 +9,9 @@ import Cart from '../components/Cart/Cart'
 import AllProducts from '../components/AllProducts/AllProducts'
 import Wishlist from '../components/Wishlist/Wishlist'
 import Statistics from '../pages/Statistics'
+import Deals from '../pages/Deals'
+
+
 
 const router = createBrowserRouter([
   {
@@ -58,6 +61,11 @@ const router = createBrowserRouter([
         element: <Details></Details>,
         loader: () => fetch('../products.json')
       },
+      {
+        path: 'deals',
+        element:<Deals></Deals>,
+        loader: () => fetch('../deals.json')
+      }
       
 
       
