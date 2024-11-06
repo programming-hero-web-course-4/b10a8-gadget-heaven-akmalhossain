@@ -2,6 +2,11 @@ import React, { useEffect, useState } from 'react';
 import { useLoaderData } from 'react-router-dom';
 import { getCartData, removeFromCartList } from '../../utility/addToDB';
 import CartProduct from '../CartProduct/CartProduct';
+import Modal from '../Modal/Modal';
+
+
+
+
 
 const Cart = () => {
 
@@ -13,7 +18,7 @@ const Cart = () => {
 
     const [totalPrice, setTotalPrice] = useState(0);
 
-    
+   
 
 
     useEffect(() => {
@@ -73,14 +78,15 @@ const Cart = () => {
         setReadList(sortedReadList);
     }
 
-    return (
+    return (<>
         <div className='w-8/12 mx-auto mt-10'>
             <div className='flex items-center justify-between'>
                 <h4 className='text-2xl text-dark font-bold'>Cart</h4>
                 <div className='flex items-center gap-5'>
                     <h1 className='text-2xl text-dark font-bold'>Total Cost: ${totalPrice}</h1>
                     <button onClick={()=>{handleSort()}} className='btn btn-border'>Sort by Price </button>
-                    <button className='btn'>Purchase </button>
+                    <button  className='btn'>Purchase </button>
+                    
                 </div>
             </div>
             <div className='space-y-8 mt-10'>
@@ -88,7 +94,9 @@ const Cart = () => {
                     readList.map(product => <CartProduct key={product.id} product={product} handleRemoveCart={handleRemoveCart}></CartProduct>)
                 }
             </div>
-        </div>
+        </div> 
+        <Modal></Modal>
+        </>
     );
 };
 

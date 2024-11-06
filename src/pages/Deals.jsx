@@ -1,9 +1,15 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { useLoaderData } from 'react-router-dom';
 import Deal from '../components/Deal/Deal';
 
 const Deals = () => {
-    const allData = useLoaderData()
+    
+    const allData = useLoaderData();
+
+    useEffect(()=>{
+        document.title = 'Deals'
+    },[])
+
     return (
         <div className='mx-auto'>
             <div className='bg-primary py-16'>

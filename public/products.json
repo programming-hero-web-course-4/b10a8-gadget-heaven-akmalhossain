@@ -180,30 +180,29 @@
         "availability": true,
         "rating": 4.9
       },
-      {
-        "id": 17,
-        "product_id": "LAP017",
-        "product_title": "MacBook Pro 16-inch",
-        "product_image": "https://i.ibb.co.com/fHqvQJb/mac.png",
-        "category": "Laptops",
-        "price": 820,
-        "description": "Apple MacBook Pro with M1 Max chip, 32GB RAM, and 1TB SSD.",
-        "Specification": ["Apple M1 Max chip", "32GB RAM", "1TB SSD", "16-inch Retina display"],
-        "availability": true,
-        "rating": 5.0
-      },
-      {
-        "id": 18,
-        "product_id": "LAP018",
-        "product_title": "MacBook Air 13-inch",
-        "product_image": "https://i.ibb.co.com/fHqvQJb/mac.png",
-        "category": "Laptops",
-        "price": 490,
-        "description": "Apple MacBook Air with Intel i5 processor, 8GB RAM, and 128GB SSD.",
-        "Specification": ["Intel i5 processor", "8GB RAM", "128GB SSD", "13.3-inch Retina display"],
-        "availability": false,
-        "rating": 4.5
-      }
+      {"id": 17,
+      "product_id": "IPH002",
+      "product_title": "iPhone DE 201",
+      "product_image": "https://i.ibb.co.com/nRh6ymg/iphone.png",
+      "category": "iPhone",
+      "price": 329,
+      "description": "Apple iPhone SE with A15 Bionic chip and 64GB storage.",
+      "Specification": ["A15 Bionic chip", "64GB storage", "4.7-inch Retina display"],
+      "availability": true,
+      "rating": 4.5
+    },
+    {"id": 18,
+      "product_id": "SWT002",
+      "product_title": "Samsung Galaxy Watch 8",
+      "product_image": "https://i.ibb.co.com/YynTrqh/swatch.png",
+      "category": "Smart-Watches",
+      "price": 99,
+      "description": "Samsung Galaxy Watch 5 with fitness and health tracking.",
+      "Specification": ["Fitness Tracking", "Health Tracking", "AMOLED Display"],
+      "availability": true,
+      "rating": 4.5
+    }
+     
     
     
   ]

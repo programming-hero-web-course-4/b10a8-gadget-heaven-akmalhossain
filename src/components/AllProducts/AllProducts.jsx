@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import SingleProduct from '../SingleProduct/SingleProduct';
-import Sidebar from '../Sidebar/Sidebar';
+
 import { useLoaderData, useParams } from 'react-router-dom';
 
 const AllProducts = () => {
@@ -16,9 +16,10 @@ const AllProducts = () => {
             const filteredCategory = [...allProductsData].filter(product => product.category === category)
             setAllProducts(filteredCategory);
         }
-        else if(category==='All-Product'){
-            setAllProducts(allProductsData.slice(0, 9))
-        }
+        // else if(category==='All-Product'){
+        //     // setAllProducts(allProductsData.slice(0, 9))
+        //     setAllProducts(allProductsData)
+        // }
 
 
 

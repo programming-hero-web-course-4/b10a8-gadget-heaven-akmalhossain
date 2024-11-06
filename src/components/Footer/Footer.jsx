@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const Footer = () => {
     return (
@@ -13,27 +14,27 @@ const Footer = () => {
                 <nav className='flex flex-col gap-4 mx-auto items-center'>
                     <h6 className="text-xl font-bold text-dark">Services</h6>
                     <div className='flex flex-col gap-3'>
-                    <a className="link  link-hover text-dark60">Product Support</a>
-                    <a className="link link-hover text-dark60">Order Tracking</a>
-                    <a className="link link-hover text-dark60">Shipping & Delivery</a>
-                    <a className="link link-hover text-dark60">Returns</a>
+                    <Link to={'productsupport'} className="link  link-hover text-dark60">Product Support</Link>
+                    <Link to={'ordertrack'} className="link link-hover text-dark60">Order Tracking</Link>
+                    <Link to={'shipping'} className="link link-hover text-dark60">Shipping & Delivery</Link>
+                    <Link to={'returns'} className="link link-hover text-dark60">Returns</Link>
                     </div>
                 </nav>
                 <nav className='flex flex-col gap-4 mx-auto items-center'>
                     <h6 className="text-xl font-bold text-dark">Company</h6>
                     <div className='flex flex-col gap-3'>
-                    <a className="link  link-hover text-dark60">About Us</a>
-                    <a className="link link-hover text-dark60">Careers</a>
-                    <a className="link link-hover text-dark60">Contact</a>
+                    <Link to={'about'} className="link  link-hover text-dark60">About Us</Link>
+                    <Link to={'carrers'} className="link link-hover text-dark60">Careers</Link>
+                    <Link to={'contact'} className="link link-hover text-dark60">Contact</Link>
                     
                     </div>
                 </nav>
                 <nav className='flex flex-col gap-4 mx-auto items-center'>
                     <h6 className="text-xl font-bold text-dark">Legal</h6>
                     <div className='flex flex-col gap-3'>
-                    <a className="link  link-hover text-dark60">Terms Of Service</a>
-                    <a className="link link-hover text-dark60">Privacy</a>
-                    <a className="link link-hover text-dark60">Cookie Policy</a>
+                    <Link to={'terms'} className="link  link-hover text-dark60">Terms Of Service</Link>
+                    <Link to={'privacy'} className="link link-hover text-dark60">Privacy</Link>
+                    <Link to={'cookie'} className="link link-hover text-dark60">Cookie Policy</Link>
                     
                     </div>
                 </nav>

@@ -5,7 +5,15 @@ import love from '../../src/assets/icons/love.svg';
 import { addStoredCartList, addWishList, getStoredWishListData } from '../utility/addToDB';
 import { useEffect, useState } from 'react';
 
+
 import star from '../assets/icons/icons8-star-48.png'
+
+// 
+
+// 
+
+
+
 
 const Details = () => {
 
@@ -96,6 +104,7 @@ const Details = () => {
                 </div>
 
             </section>
+            
         </>
 
     );
