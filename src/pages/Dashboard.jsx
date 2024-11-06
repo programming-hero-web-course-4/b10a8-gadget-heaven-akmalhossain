@@ -1,7 +1,12 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { NavLink, Outlet } from 'react-router-dom';
 
 const Dashboard = () => {
+
+    useEffect(()=>{
+        document.title = 'Dashboard'
+    },[])
+
     return ( <>
         <div className='w-full text-center bg-primary text-white p-8 space-y-8'>
             <div className='space-y-4'>

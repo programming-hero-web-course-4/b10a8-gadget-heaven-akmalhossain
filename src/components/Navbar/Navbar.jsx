@@ -7,11 +7,11 @@ import { getCartData } from '../../utility/addToDB'
 const Navbar = () => {
 
     const location = useLocation();
-    // const [cartList, setCartList] = useState([])
-    // useEffect(() => {
-    //     const storedCartList = getCartData();
-    //     setCartList(storedCartList);
-    // }, [])
+    const [cartList, setCartList] = useState([])
+    useEffect(() => {
+        const storedCartList = getCartData();
+        setCartList(storedCartList);
+    }, [])
 
     const links = <>
 
@@ -64,7 +64,7 @@ const Navbar = () => {
 
 
                     <div className='absolute right-0 bg-white rounded-full w-6 h-6 text-center shadow-lg border top-0'>
-                        {/* {cartList.length} */}
+                        {cartList.length}
                         </div>
                 </Link>
 

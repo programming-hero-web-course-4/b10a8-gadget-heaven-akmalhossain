@@ -6,11 +6,15 @@ import { addStoredCartList, addWishList, getStoredWishListData } from '../utilit
 import { useEffect, useState } from 'react';
 
 
+
+
 const Details = () => {
 
     const [inWiseList, setInWiseList] = useState(false)
 
-  
+    useEffect(()=>{
+        document.title = 'Details'
+    },[])
 
     const { id } = useParams();
     const clickedId = parseInt(id);
@@ -31,7 +35,10 @@ const Details = () => {
 
    
     const handleAddToCart=(pid)=>{
-    addStoredCartList(pid)
+        // console.log(pid)
+    addStoredCartList(pid);
+    
+    
   }
 
   const handleAddWishList=(pid)=>{

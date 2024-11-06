@@ -13,6 +13,8 @@ const Cart = () => {
 
     const [totalPrice, setTotalPrice] = useState(0);
 
+    
+
 
     useEffect(() => {
         const storedCartList = getCartData();
@@ -25,7 +27,7 @@ const Cart = () => {
             return allProducts.find(product => product.id === id)
         })
 
-        
+
         setReadList(readProductList)
 
     }, []);
@@ -64,13 +66,20 @@ const Cart = () => {
         setReadList(newPCart);
         removeFromCartList(id);
     }
+
+    const handleSort = ()=>{
+        
+        const sortedReadList = [...readList].sort((a,b)=>b.price - a.price);
+        setReadList(sortedReadList);
+    }
+
     return (
         <div className='w-8/12 mx-auto mt-10'>
             <div className='flex items-center justify-between'>
                 <h4 className='text-2xl text-dark font-bold'>Cart</h4>
                 <div className='flex items-center gap-5'>
                     <h1 className='text-2xl text-dark font-bold'>Total Cost: ${totalPrice}</h1>
-                    <button className='btn btn-border'>Sort by Price </button>
+                    <button onClick={()=>{handleSort()}} className='btn btn-border'>Sort by Price </button>
                     <button className='btn'>Purchase </button>
                 </div>
             </div>

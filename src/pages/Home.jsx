@@ -1,4 +1,4 @@
-import React, { createContext } from 'react';
+import React, { createContext, useEffect } from 'react';
 import Banner from '../components/Banner/Banner';
 import Heading from '../components/Heading/Heading';
 import AllProducts from '../components/AllProducts/AllProducts';
@@ -12,9 +12,12 @@ export const testContext = createContext(
 const Home = () => {
     const categories = useLoaderData()
     // console.log(categories);
-    
+    useEffect(()=>{
+        document.title = 'Home'
+    },[])
     return (
         <>
+        
             <Banner></Banner>
             <main className='w-10/12 mx-auto'>
             <Heading title={'Explore Cutting-Edge Gadgets'}></Heading>

@@ -14,6 +14,10 @@ const Layouts = () => {
         <div>
             <Toaster></Toaster>
             {/* Navbar */}
+
+           
+
+
             <Navbar></Navbar>
             {/* dynamic content */}
             <Outlet></Outlet>

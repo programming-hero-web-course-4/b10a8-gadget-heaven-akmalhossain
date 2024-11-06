@@ -13,7 +13,7 @@ const CartProduct = ({ product, handleRemoveCart }) => {
                     <p>Price: $ {price}</p>
                 </div>
                </div>
-                {/* <button onClick={()=>{handleRemoveCart(id)}} className='text-red-700'>Remove</button> */}
+                <button onClick={()=>{handleRemoveCart(id)}} className='text-red-700'>Remove</button>
             </div>
             </>
     );
