@@ -8,24 +8,59 @@ const Cart = () => {
     const allProducts = useLoaderData();
 
     // console.log(allProducts);
-    const [readList, setReadList]=useState([]);
-
-    
-    const [totalPrice, setTotalPrice] =useState(0);
+    const [readList, setReadList] = useState([]);
 
 
-    useEffect(()=>{
+    const [totalPrice, setTotalPrice] = useState(0);
+
+
+    useEffect(() => {
         const storedCartList = getCartData();
         const storedCartListInt = storedCartList.map(id => parseInt(id))
-        // console.log(storedCartListInt.length);
+
         // 
-        const readProductList = allProducts.filter(product => storedCartListInt.includes(product.id));
-        console.log(readProductList);
-        setReadList(readProductList)
+        // const readProductList = allProducts.filter(product => storedCartListInt.includes(product.id));
+
+        const readProductList = storedCartList.map(id => {
+            return allProducts.find(product => product.id === id)
+        })
+
         
-    },[])
-    const handleRemoveCart=(id)=>{
-        const newPCart = readList.filter((p)=>p.id!==id);
+        setReadList(readProductList)
+
+    }, []);
+
+
+
+    useEffect(() => {
+
+        const calculateTotalPrice = () => {
+
+            const cartIds = JSON.parse(localStorage.getItem('cart-list')) || [];
+
+
+            const total = cartIds.reduce((sum, id) => {
+
+                const product = allProducts.find(product => product.id === id);
+
+
+                return product ? sum + product.price : sum;
+            }, 0);
+
+
+            setTotalPrice(total);
+        };
+
+
+        calculateTotalPrice();
+    }, [allProducts]);
+
+    const handleRemoveCart = (id) => {
+        const newPCart = readList.filter((p, idx) => p.id !== id);
+        const newPrice = readList.filter((p) => p.id === id);
+        setTotalPrice(totalPrice - newPrice[0].price)
+
+        console.log(newPCart);
         setReadList(newPCart);
         removeFromCartList(id);
     }
@@ -34,14 +69,14 @@ const Cart = () => {
             <div className='flex items-center justify-between'>
                 <h4 className='text-2xl text-dark font-bold'>Cart</h4>
                 <div className='flex items-center gap-5'>
-                    <h1 className='text-2xl text-dark font-bold'>Total Cost: {readList.length}</h1>
+                    <h1 className='text-2xl text-dark font-bold'>Total Cost: ${totalPrice}</h1>
                     <button className='btn btn-border'>Sort by Price </button>
                     <button className='btn'>Purchase </button>
                 </div>
             </div>
             <div className='space-y-8 mt-10'>
                 {
-                    readList.map(product =><CartProduct key={product.id} product={product} handleRemoveCart={handleRemoveCart}></CartProduct>)
+                    readList.map(product => <CartProduct key={product.id} product={product} handleRemoveCart={handleRemoveCart}></CartProduct>)
                 }
             </div>
         </div>
